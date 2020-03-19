@@ -4,7 +4,10 @@ Este projeto consiste em criar uma interface com informações dispostas em form
 
 * Mostrar quantos projetos foram <i>cadastrados</i> por <strong>mês</strong> ou por <strong>ano</strong>; :+1:
   * Parte funcional finalizada;
-  * Parte de estilo ainda não finalizada.
+  * Parte de estilo finalizada;
+  
+ ![Alt Text](https://github.com/64J0/fullplansBI/raw/master/img-github/projCadastradosLayout.JPG)
+ 
 * Mostrar quantos projetos foram <i>finalizados</i> por <strong>mês</strong>, por <strong>ano</strong> ou por <strong>quem</strong>;
   * Parte funcional não finalizada;
   * Parte de estilo ainda não finalizada.
@@ -15,4 +18,4 @@ Este projeto consiste em criar uma interface com informações dispostas em form
   * Parte funcional não finalizada;
   * Parte de estilo ainda não finalizada.
 
-Inicialmente pretende-se utilizar a biblioteca ChartJS para plotar os gráficos.
+**Inicialmente está sendo usada a biblioteca ChartJS para plotar os gráficos.**
