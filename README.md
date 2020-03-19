@@ -17,5 +17,7 @@ Este projeto consiste em criar uma interface com informações dispostas em form
 * Mostrar quantos projetos foram finalizados <i>sem atrasos</i>, por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o <strong>responsável</strong>.
   * Parte funcional não finalizada;
   * Parte de estilo ainda não finalizada.
+  
+<i>Nas imagens estão sendo usados dados falsos para testar o funcionamento do sistema.</i>
 
 **Inicialmente está sendo usada a biblioteca ChartJS para plotar os gráficos.**
