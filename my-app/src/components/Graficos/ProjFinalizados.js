@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Chartjs from 'chart.js';
 
 import './ProjFinalizados.css';
+import defineDadosASeremMostrados from './utils/defineDadosProjFinalizados';
 
 // Dados que serão usados para simular o funcionamento da aplicação com uma boa quantidade
 // de informações. O banco de dados atualmente não apresenta muitos dados, por isso optou-se
@@ -19,7 +20,7 @@ function ProjFinalizados({ props }) {
     //      arquivado = true
     // Filtrar pelos campos: mês, ano, pessoa
     // Se for escolhido o mês: {
-    //      o usuárop escolhe o ano, com base nos anos encontrados nos dados.
+    //      o usuário escolhe o ano, com base nos anos encontrados nos dados.
     //      o usuário escolhe a pessoa com base nas pessoas encontradas nos dados.
     // }
     // Se for escolhido o ano: {
@@ -39,8 +40,9 @@ function ProjFinalizados({ props }) {
     useEffect(() => {
         function filtrarDados() {
             let dadosFiltrados = [];
+            // Na hora de implementar o sistema real -> Substituir dadosExemplo por props.
             dadosExemplo.map(dado => {
-                if (dado.arquivado) { // arquivado = finalizado
+                if (dado.arquivado) { // arquivado = true = finalizado
                     dadosFiltrados.push(dado);
                 }
                 return null;
@@ -49,110 +51,21 @@ function ProjFinalizados({ props }) {
         }
 
         filtrarDados();
+    // Esse Hook deve ser executado sempre que props mudar, pois isso significa
+    // que os dados do banco de dados foram alterados também.
     }, [props]);
 
+
+    // As próximas operações devem ser efetuadas usando o conteúdo armazenado no estado
+    // de dadosFiltrados.
 
     // defineDadosASeremMostrados()
     //
     // Essa função é responsável por salvar em uma variável de estado os valores que
     // serão usados para plotar o gráfico.
-    useEffect(() => {
-        function defineDadosASeremMostrados() {
-            let objMostrar = {
-                    x: [],
-                    y: []
-                },
-                dataArquivado,
-                indice,
-                projetista;
-                
-            if (opcaoInputRadio === 'mes') {
-                // Popular os dados de x com meses e y com 0:
-                for(var cont = 0; cont < 12; cont++) {
-                    objMostrar.x.push(cont + 1);
-                    objMostrar.y.push(0);
-                }
-                if (opcaoPessoaSelect === 'Todas as pessoas') {
-                    if (opcaoAnoSelect === 'Todos os anos') {
-                        dadosFiltrados.map(dado => {
-                            dataArquivado = new Date(dado.dataArquivado);
-                            indice = dataArquivado.getMonth();
-                            objMostrar.y[indice]++; // Incrementa o valor salvo na posição do mês
-                            return null;
-                        })
-                    } else {
-                        dadosFiltrados.map(dado => {
-                            dataArquivado = new Date(dado.dataArquivado);
-                            if (String(dataArquivado.getFullYear()) === String(opcaoAnoSelect)) {
-                                indice = dataArquivado.getMonth();
-                                objMostrar.y[indice]++; // Incrementa o valor salvo na posição do mês
-                            }
-                            return null;
-                        });
-                    }
-                } else {
-                    if (opcaoAnoSelect === 'Todos os anos') {
-                        dadosFiltrados.map(dado => {
-                            dado.infoProjetos.map(infoProjeto => {
-                                if (String(infoProjeto.projetistaDesenho) === String(opcaoPessoaSelect)) {
-                                    if (String(projetista) !== String(opcaoPessoaSelect)) {
-                                        dataArquivado = new Date(dado.dataArquivado)
-                                        indice = dataArquivado.getMonth();
-                                        objMostrar.y[indice]++;
-                                        projetista = opcaoPessoaSelect;
-                                    }
-                                }
-                                return null;
-                            });
-                            projetista = '';
-                            return null;
-                        });
-                    } else {
-                        dadosFiltrados.map(dado => {
-                            dataArquivado = new Date(dado.dataArquivado);
-                            if (String(dataArquivado.getFullYear()) === String(opcaoAnoSelect)) {
-                                dado.infoProjetos.map(infoProjeto => {
-                                    if (String(infoProjeto.projetistaDesenho) === String(opcaoPessoaSelect)) {
-                                        if (String(projetista) !== String(opcaoPessoaSelect)) {
-                                            dataArquivado = new Date(dado.dataArquivado)
-                                            indice = dataArquivado.getMonth();
-                                            objMostrar.y[indice]++;
-                                            projetista = opcaoPessoaSelect;
-                                        }
-                                    }
-                                    return null;
-                                });
-                            }
-                            projetista = '';
-                            return null;
-                        });
-                    }
-                }
-            } else if (opcaoInputRadio === 'ano') {
-                let anoAtual = new Date(Date.now()).getFullYear();
-                // Preenche os dados do eixo X que serão mostrados
-                for (let cont = 0; cont <= 4; cont++) {
-                    objMostrar.x.push(anoAtual - cont);
-                    objMostrar.y.push(0);
-                }
-                if (opcaoPessoaSelect === 'Todas as pessoas') {
-                    if (opcaoAnoSelect === 'Todos os anos') {
-                        dadosFiltrados.map(dado => {
-                            dataArquivado = new Date(dado.dataArquivado);
-                            indice = Number(anoAtual - dataArquivado.getFullYear());
-                            objMostrar.y[indice]++; // Incrementa o valor salvo na posição do ano
-                            return null;
-                        });
-                        objMostrar.x = objMostrar.x.reverse();
-                        objMostrar.y = objMostrar.y.reverse();
-                    }
-                }
-            }
-            console.log('objMostrar', objMostrar)
-            setDadosParaMostrar(objMostrar);
-        }
-
-        defineDadosASeremMostrados();
+    useEffect(() => {       
+        const response = defineDadosASeremMostrados(opcaoInputRadio, opcaoAnoSelect, opcaoPessoaSelect, dadosFiltrados);
+        setDadosParaMostrar(response);
     }, [opcaoInputRadio, opcaoAnoSelect, opcaoPessoaSelect, dadosFiltrados]);
 
 

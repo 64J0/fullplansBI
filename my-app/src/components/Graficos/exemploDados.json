@@ -11,6 +11,11 @@
             {   
                 "dataInicio": 1563505200000,
                 "dataFinal": 1583636400000,
+                "projetistaDesenho": "João José"
+            },
+            {   
+                "dataInicio": 1563505200000,
+                "dataFinal": 1583636400000,
                 "projetistaDesenho": "Maria Maria"
             },
             {   
@@ -24,7 +29,7 @@
                 "projetistaDesenho": "Pedro Paulo"
             }
         ],
-        "dataArquivado": 1583636400000
+        "dataArquivado": 1502074800000
     },
     {   
         "arquivado": true,
