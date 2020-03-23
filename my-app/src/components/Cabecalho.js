@@ -1,11 +1,10 @@
 import React from 'react';
+import './Cabecalho.css';
 
 function Cabecalho() {
     return(
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <p className="navbar-brand">Full Plans BI header</p>
-            </nav>
+            <h1>Full Plans BI</h1>
         </header>
     )
 }

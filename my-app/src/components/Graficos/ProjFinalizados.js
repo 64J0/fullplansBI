@@ -87,7 +87,7 @@ function ProjFinalizados({ props }) {
         }
 
         let chartConfig = {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: dadosParaMostrar.x,
                 datasets: [{
@@ -129,7 +129,7 @@ function ProjFinalizados({ props }) {
 
     // setOpcaoDeAnos()
     //
-    // Essa função determina quais possibilidades de anos que serão mostradas para o usuário
+    // Esse hook determina quais possibilidades de anos que serão mostradas para o usuário
     // com base no conjunto de dados do banco de dados.
     useEffect(() => {
         function setOpcaoDeAnos() {
@@ -201,7 +201,7 @@ function ProjFinalizados({ props }) {
 
     // setOpcaoDePessoas()
     //
-    // Essa função determina quais possibilidades de pessoas que serão mostradas para o usuário
+    // Esse hook determina quais possibilidades de pessoas que serão mostradas para o usuário
     // com base no conjunto de dados do banco de dados.
     useEffect(() => {
         function setOpcaoDePessoas() {
@@ -221,7 +221,7 @@ function ProjFinalizados({ props }) {
     }, [pessoasEncontradas]);
 
 
-    // Essa função lida com a opção que foi escolhida na tag <select> pelo usuário.
+    // Essas funções lidam com a opção que foi escolhida na tag <select> pelo usuário.
     function handleAnoSelectOption(e) {
         let id = e.target.selectedIndex;
         setOpcaoAnoSelect(e.target[id].text);
@@ -236,36 +236,41 @@ function ProjFinalizados({ props }) {
         <div id="ProjFinalizados">
             <h3 className="ProjFinalizados">Projetos finalizados</h3>
 
-            <input 
-                type="radio" 
-                id="mes2"
-                name="ProjFinalizados" 
-                value="mes2"
-                onClick={() => {setOpcaoInputRadio('mes')}} />
-            <label htmlFor="mes2">Mês</label>
+            <div className="grid-container">
+                <div className="menu">
+                    <h4 className="nav-title">Menu</h4>
+                    <input 
+                        type="radio" 
+                        id="mes2"
+                        name="ProjFinalizados" 
+                        value="mes2"
+                        onClick={() => {setOpcaoInputRadio('mes')}} />
+                    <label htmlFor="mes2">Mês</label>
 
-            <div className="selectTagAno">
-                <select id="anoQueSeraMostradoProjFinalizados2" onChange={handleAnoSelectOption}>
-                    <option value="Todos os anos">Todos os anos</option>
-                </select>
-            </div>
+                    <div className="selectTagAno">
+                        <select id="anoQueSeraMostradoProjFinalizados2" onChange={handleAnoSelectOption}>
+                            <option value="Todos os anos">Todos os anos</option>
+                        </select>
+                    </div>
 
-            <input 
-                type="radio" 
-                id="ano2"
-                name="ProjFinalizados" 
-                value="ano2"
-                onClick={() => {setOpcaoInputRadio('ano')}} />
-            <label htmlFor="ano2">Ano</label>
+                    <input 
+                        type="radio" 
+                        id="ano2"
+                        name="ProjFinalizados" 
+                        value="ano2"
+                        onClick={() => {setOpcaoInputRadio('ano')}} />
+                    <label htmlFor="ano2">Ano</label>
 
-            <div className="selectTagPessoa">
-                <select id="pessoaQueSeraMostradaProjFinalizados2" onChange={handlePessoaSelectOption}>
-                    <option value="Todas as pessoas">Todas as pessoas</option>
-                </select>
-            </div>
-
-            <div className="plot1">
-                <canvas id="ProjFinalizadosCanvas" />
+                    <div className="selectTagPessoa">
+                        <select id="pessoaQueSeraMostradaProjFinalizados2" onChange={handlePessoaSelectOption}>
+                            <option value="Todas as pessoas">Todas as pessoas</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div className="plot1">
+                    <canvas id="ProjFinalizadosCanvas" />
+                </div>
             </div>
         </div>
     )

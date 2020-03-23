@@ -6,8 +6,9 @@ import './Home.css';
 import ProjCadastrados from './Graficos/ProjCadastrados';
 // Mostrar quantos projetos foram finalizados por mês, por ano ou por quem.
 import ProjFinalizados from './Graficos/ProjFinalizados';
-
 // Mostrar quantos projetos ficaram atrasados por mês, por ano ou por quem.
+// import ProjAtrasados from './Graficos/ProjAtrasados';
+
 // Mostrar quantos projetos foram finalizados por mês, por ano ou por quem.
 
 function Home({ projetos }) {

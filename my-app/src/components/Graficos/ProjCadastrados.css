@@ -1,6 +1,6 @@
 div#ProjCadastrados {
     border: 1px solid #bbb;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
     padding-bottom: 20px;
 }
 
@@ -12,6 +12,7 @@ div#ProjCadastrados div.grid-container {
 
 div#ProjCadastrados h3.ProjCadastrados {
     margin: 20px auto;
+    color: #444;
 }
 
 div#ProjCadastrados div.grid-container nav {
