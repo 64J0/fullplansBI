@@ -9,7 +9,7 @@ Este projeto consiste em criar uma interface com informações dispostas em form
  ![Alt Text](https://github.com/64J0/fullplansBI/raw/master/img-github/projCadastradosLayout.JPG)
  
 * Mostrar quantos projetos foram <i>finalizados</i> por <strong>mês</strong>, por <strong>ano</strong> ou por <strong>quem</strong>;
-  * Parte funcional não finalizada;
+  * Parte funcional finalizada;
   * Parte de estilo ainda não finalizada.
 * Mostrar quantos projetos ficaram <i>atrasados</i> por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o <strong>responsável</strong>;
   * Parte funcional não finalizada;
