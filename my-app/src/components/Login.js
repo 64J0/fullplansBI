@@ -25,7 +25,7 @@ function Login({ onSubmit }) {
         <div className="login">
             <form onSubmit={handleLogin} name="form-login" >
                 <fieldset>
-                    <legend>Login</legend>
+                    <legend><i>Login</i></legend>
                     <hr/>
                     <div className="form-group">
                         <label htmlFor="email" className="email">

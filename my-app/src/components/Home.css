@@ -1,10 +1,6 @@
 div.showProjetos {
     margin: 0 auto;
-    padding: 25px;
+    padding: 25px 25px 50px 25px;
     width: 1000px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    border-right: 6px solid #aaa;
-    border-bottom: 6px solid #aaa;
+    background-color: transparent;
 }

@@ -12,7 +12,10 @@ html, body, #root {
 }
 
 body {
-    background-color: #E5E6F0;
+    background-color: #ccc;
+    min-width: 1000px;
+    display: flex;
+    justify-content: center;
     -webkit-font-smoothing: antialiased;
 }
 

@@ -1,31 +1,40 @@
+/*=============================== 
+ DIV CONTAINER 
+===============================*/
 div#ProjCadastrados {
-    border: 1px solid #bbb;
+    background-color: #fff;
+    border: 1px solid transparent;
     border-radius: 15px 15px 0 0;
     padding-bottom: 20px;
 }
 
-div#ProjCadastrados div.grid-container {
-    display: grid;
-    grid-template-areas: 'nav nav nav nav plot plot plot';
-    align-items: center;
-}
-
 div#ProjCadastrados h3.ProjCadastrados {
-    margin: 20px auto;
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
     color: #444;
 }
 
-div#ProjCadastrados div.grid-container nav {
+
+/*=============================== 
+ GRID CONTAINER 
+===============================*/
+div#ProjCadastrados div.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    justify-content: space-between;
+}
+
+div#ProjCadastrados div.grid-container div.menu {
     border: 1px solid #777;
     background-color: #fff;
     border-radius: 8px 0 0 0;
     height: 100%;
-    width: 95%;
-    margin: 0 auto;
-    grid-area: nav;
+    margin: 0 5px 0 15px;
 }
 
-div#ProjCadastrados div.grid-container nav h4.nav-title {
+div#ProjCadastrados div.grid-container div.menu h4 {
     background-color: #333;
     border: 2px solid #333;
     border-radius: 8px 0 0 0;
@@ -33,34 +42,12 @@ div#ProjCadastrados div.grid-container nav h4.nav-title {
     padding: 5px;
 }
 
-div#ProjCadastrados div.grid-container nav div.option-box input {
-    margin: 0 5px;
-}
-
-div#ProjCadastrados div.grid-container nav div.option-box label {
-    margin: 10px 7px;
-}
-
-div#ProjCadastrados div.grid-container div.plot1 {
-    grid-area: plot;
-}
-
-div#ProjCadastrados div.plot1 {
-    border: 1px solid #777;
-    border-radius: 0 10px;
-    width: 720px;
+div#ProjCadastrados div.grid-container div.menu input {
+    margin: 0 10px;
 }
 
 
-
-
-
-div#ProjCadastrados:first-of-type {
-    display: grid;
-    margin-bottom: 5px;
-}
-
-div#ProjCadastrados input {
+div#ProjCadastrados div.grid-container div.menu input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -71,12 +58,23 @@ div#ProjCadastrados input {
   
     border: 2px solid #999;
     transition: 0.2s all linear;
+    
     margin-right: 5px;
-  
-    position: relative;
-    top: 4px;
 }
 
-div#ProjCadastrados input:checked {
-    border: 6px solid black;
+div#ProjCadastrados div.grid-container div.menu input:checked {
+    border: 6px solid #333;
+}
+
+div#ProjCadastrados div.grid-container div.menu label {
+    margin-right: 10px;
+}
+
+
+div#ProjCadastrados div.plot1 {
+    border: 1px solid #777;
+    border-radius: 0 10px 10px 0;
+    min-width: 600px;
+    min-height: 300px;
+    margin-right: 10px;
 }

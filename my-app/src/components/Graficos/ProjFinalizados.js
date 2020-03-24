@@ -205,20 +205,31 @@ function ProjFinalizados({ props }) {
     // com base no conjunto de dados do banco de dados.
     useEffect(() => {
         function setOpcaoDePessoas() {
-            let tagSelect = document.getElementById('pessoaQueSeraMostradaProjFinalizados2');
-
-            tagSelect.innerHTML = '<option value="Todas as pessoas">Todas as pessoas</option>';
-            pessoasEncontradas.map(pessoa => {
-                tagSelect.innerHTML += `<option value=${pessoa}>${pessoa}</option>`;
-                return null;
-            });
+            let tagSelect;
+            if (String(opcaoInputRadio) === 'mes') {
+                document.getElementsByClassName('selectTagGroup')[0].setAttribute("style", "visibility: visible");
+                document.getElementsByClassName('selectTagGroup')[1].setAttribute("style", "visibility: hidden");
+                tagSelect = document.querySelector('#selectPessoaMes');
+            } else if (String(opcaoInputRadio) === 'ano') {
+                document.getElementsByClassName('selectTagGroup')[0].setAttribute("style", "visibility: hidden");
+                document.getElementsByClassName('selectTagGroup')[1].setAttribute("style", "visibility: visible");
+                tagSelect = document.querySelector('#selectPessoaAno');
+            }
+            
+            if (tagSelect) {
+                tagSelect.innerHTML = '<option value="Todas as pessoas">Todas as pessoas</option>';
+                pessoasEncontradas.map(pessoa => {
+                    tagSelect.innerHTML += `<option value=${pessoa}>${pessoa}</option>`;
+                    return null;
+                });
+            }
         }
 
         if (pessoasEncontradas.length > 0) {
             setOpcaoDePessoas();
         }
     // eslint-disable-next-line
-    }, [pessoasEncontradas]);
+    }, [pessoasEncontradas, opcaoInputRadio]);
 
 
     // Essas funções lidam com a opção que foi escolhida na tag <select> pelo usuário.
@@ -239,6 +250,7 @@ function ProjFinalizados({ props }) {
             <div className="grid-container">
                 <div className="menu">
                     <h4 className="nav-title">Menu</h4>
+                    
                     <input 
                         type="radio" 
                         id="mes2"
@@ -246,12 +258,18 @@ function ProjFinalizados({ props }) {
                         value="mes2"
                         onClick={() => {setOpcaoInputRadio('mes')}} />
                     <label htmlFor="mes2">Mês</label>
-
-                    <div className="selectTagAno">
-                        <select id="anoQueSeraMostradoProjFinalizados2" onChange={handleAnoSelectOption}>
-                            <option value="Todos os anos">Todos os anos</option>
-                        </select>
-                    </div>
+                    <div className="selectTagGroup" style={{visibility: "hidden"}}>
+                        <div className="selectTagAno">
+                            <select id="anoQueSeraMostradoProjFinalizados2" onChange={handleAnoSelectOption}>
+                                <option value="Todos os anos">Todos os anos</option>
+                            </select>
+                        </div>
+                        <div className="selectTagPessoa">
+                            <select id="selectPessoaMes" onChange={handlePessoaSelectOption}>
+                                <option value="Todas as pessoas">Todas as pessoas</option>
+                            </select>
+                        </div>
+                    </div>               
 
                     <input 
                         type="radio" 
@@ -260,12 +278,14 @@ function ProjFinalizados({ props }) {
                         value="ano2"
                         onClick={() => {setOpcaoInputRadio('ano')}} />
                     <label htmlFor="ano2">Ano</label>
-
-                    <div className="selectTagPessoa">
-                        <select id="pessoaQueSeraMostradaProjFinalizados2" onChange={handlePessoaSelectOption}>
-                            <option value="Todas as pessoas">Todas as pessoas</option>
-                        </select>
+                    <div className="selectTagGroup" style={{visibility: "hidden"}}>
+                        <div className="selectTagPessoa">
+                            <select id="selectPessoaAno" onChange={handlePessoaSelectOption}>
+                                <option value="Todas as pessoas">Todas as pessoas</option>
+                            </select>
+                        </div>
                     </div>
+                    
                 </div>
             
                 <div className="plot1">

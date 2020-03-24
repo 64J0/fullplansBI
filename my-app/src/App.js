@@ -9,8 +9,6 @@ import Rodape from './components/Rodape';
 import Login from './components/Login';
 import Home from './components/Home';
 
-import './App.css';
-
 function App() {
   const [projetos, setProjetos] = useState([]);
   const [login, setLogin] = useState(false);

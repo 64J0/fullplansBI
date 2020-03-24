@@ -248,32 +248,28 @@ function ProjCadastrados({ props }) {
         <div id="ProjCadastrados" >
             <h3 className="ProjCadastrados">Projetos cadastrados</h3>
             <div className="grid-container">
-                <nav>
-                    <h4 className="nav-title">Menu</h4>
-                    <div className="option-box">
-                        <input 
-                            type="radio" 
-                            id="mes1" 
-                            name="ProjCadastrados"
-                            value="mes1"
-                            onClick={() => {setOpcaoInputRadio1('mes')}} />
-                        <label htmlFor="mes1">Mês</label>
+                <div className="menu">
+                    <h4>Menu</h4>
 
-                        <select id="anoQueSeraMostradoProjCadastrados" onChange={handleSelectOption}>
-                            <option value="Todos os anos">Todos os anos</option>
-                        </select>
-                    </div>
-                    
-                    <div className="option-box">
-                        <input 
-                            type="radio" 
-                            id="ano1" 
-                            name="ProjCadastrados"
-                            value="ano1"
-                            onClick={() => {setOpcaoInputRadio1('ano')}} />
-                        <label htmlFor="ano1">Ano</label>
-                    </div>
-                </nav>
+                    <input 
+                        type="radio" 
+                        id="mes1" 
+                        name="ProjCadastrados"
+                        value="mes1"
+                        onClick={() => {setOpcaoInputRadio1('mes')}} />
+                    <label htmlFor="mes1">Mês</label>
+                    <select id="anoQueSeraMostradoProjCadastrados" onChange={handleSelectOption}>
+                        <option value="Todos os anos">Todos os anos</option>
+                    </select>
+
+                    <input 
+                        type="radio" 
+                        id="ano1" 
+                        name="ProjCadastrados"
+                        value="ano1"
+                        onClick={() => {setOpcaoInputRadio1('ano')}} />
+                    <label htmlFor="ano1">Ano</label>
+                </div>
             
                 <div className="plot1">
                     <canvas id="ProjCadastradosCanvas" />

@@ -5,8 +5,8 @@ div.login {
     padding: 20px 0;
     border: 1px solid #ccc;
     border-radius: 15px;
-    border-right: 4px solid #aaa;
-    border-bottom: 4px solid #aaa;
+    border-right: 4px solid #999;
+    border-bottom: 4px solid #999;
 }
 
 div.login form fieldset legend {
@@ -18,8 +18,8 @@ div.login form fieldset legend {
 
 div.login form fieldset hr {
     width: 80%;
-    background-color: #ccc;
-    margin-bottom: 10px;
+    background-color: #777;
+    margin: 25px auto;
 }
 
 div.login form fieldset div.form-group {
