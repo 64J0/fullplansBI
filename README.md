@@ -6,11 +6,14 @@ Este projeto consiste em criar uma interface com informações dispostas em form
   * Parte funcional finalizada;
   * Parte de estilo finalizada;
   
- ![Alt Text](https://github.com/64J0/fullplansBI/raw/master/img-github/projCadastradosLayout.JPG)
+ ![Imagem mostrando o componente <ProjCadastrados />](https://github.com/64J0/fullplansBI/raw/master/img-github/projCadastradosLayout.JPG)
  
-* Mostrar quantos projetos foram <i>finalizados</i> por <strong>mês</strong>, por <strong>ano</strong> ou por <strong>quem</strong>;
+* Mostrar quantos projetos foram <i>finalizados</i> por <strong>mês</strong>, por <strong>ano</strong> ou por <strong>quem</strong>; :+1:
   * Parte funcional finalizada;
-  * Parte de estilo ainda não finalizada.
+  * Parte de estilo finalizada.
+  
+ ![Imagem mostrando o componente <ProjFinalizados />](https://github.com/64J0/fullplansBI/raw/master/img-github/projFinalizadosLayout.JPG)
+  
 * Mostrar quantos projetos ficaram <i>atrasados</i> por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o <strong>responsável</strong>;
   * Parte funcional não finalizada;
   * Parte de estilo ainda não finalizada.
