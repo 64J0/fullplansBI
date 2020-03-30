@@ -1,5 +1,7 @@
 # Full Plans BI :bar_chart:
 
+*Descrição de um caso de exemplo desejado:* O usuário filtra pelo funcionário Matheus. Os gráficos mostrados devem informar as seguintes informações: Quantos projetos ele foi relacionado para atuar (projetos cadastrados), quantos projetos ele finalizou, quantos ainda estão pendentes.
+
 Este projeto consiste em criar uma interface com informações dispostas em formato gráfico com respeito aos dados mantidos no banco de dados do projeto Full Plans. As features básicas serão:
 
 * Mostrar quantos projetos foram <i>cadastrados</i> por <strong>mês</strong> ou por <strong>ano</strong>; :+1:
