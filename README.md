@@ -4,27 +4,27 @@
 
 Este projeto consiste em criar uma interface com informações dispostas em formato gráfico com respeito aos dados mantidos no banco de dados do projeto Full Plans. As features básicas serão:
 
-1. Mostrar quantos projetos foram <i>cadastrados</i> por <strong>mês</strong> ou por <strong>ano</strong>; :+1:
+* Mostrar quantos projetos foram <i>cadastrados</i> por <strong>mês</strong> ou por <strong>ano</strong>; :+1:
   * Parte funcional finalizada;
   * Parte de estilo finalizada;
   
  ![Imagem mostrando o componente <ProjCadastrados />](https://github.com/64J0/fullplansBI/raw/master/img-github/projCadastradosLayout.JPG)
  
-2. Mostrar quantos projetos foram <i>finalizados</i>(<i>arquivados</i>) por <strong>mês</strong>, por <strong>ano</strong> ou por <strong>quem</strong>; :+1:
+* Mostrar quantos projetos foram <i>finalizados</i>(<i>arquivados</i>) por <strong>mês</strong>, por <strong>ano</strong> ou por <strong>quem</strong>; :+1:
   * Parte funcional finalizada;
   * Parte de estilo finalizada.
   
  ![Imagem mostrando o componente <ProjFinalizados />](https://github.com/64J0/fullplansBI/raw/master/img-github/projFinalizadosLayout.JPG)
   
-3. Mostrar quantos projetos ficaram <i>atrasados</i> por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o ~<b>responsável</b>~ (com base na implementação atual não é possível dizer quem foi o responsável pelo atraso do projeto);
+* Mostrar quantos projetos ficaram <i>atrasados</i> por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o ~<b>responsável</b>~ (com base na implementação atual não é possível dizer quem foi o responsável pelo atraso do projeto);
   * Parte funcional não finalizada;
   * Parte de estilo ainda não finalizada.
   
-4. Mostrar quantos projetos foram finalizados <i>sem atrasos</i>, por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o <strong>responsável</strong>.
+* Mostrar quantos projetos foram finalizados <i>sem atrasos</i>, por <strong>mês</strong>, por <strong>ano</strong> ou quem foi o <strong>responsável</strong>.
   * Parte funcional não finalizada;
   * Parte de estilo ainda não finalizada.
   
-5. Mostrar quantos projetos ainda estão abertos (não foram <i>arquivados</i>).
+* Mostrar quantos projetos ainda estão abertos (não foram <i>arquivados</i>).
   
 <i>Nas imagens estão sendo usados dados falsos para testar o funcionamento do sistema.</i>
 
