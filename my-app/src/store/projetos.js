@@ -1,1 +1,0 @@
-// Nessa store serão armazenados os dados referentes aos projetos que estão armazenados no banco de dados. O estado inicial serão os dados retornados pela API no backend.

@@ -1,23 +1,24 @@
-import React from 'react';
+import React from "react";
 
-import './Home.css';
+import "./Home.css";
 
 // Mostrar quantos projetos foram cadastrados por mês ou por ano.
-import ProjCadastrados from './Graficos/ProjCadastrados';
+import ProjCadastrados from "./Graficos/ProjCadastrados";
 // Mostrar quantos projetos foram finalizados por mês, por ano ou por quem.
-import ProjFinalizados from './Graficos/ProjFinalizados';
+import ProjFinalizados from "./Graficos/ProjFinalizados";
 // Mostrar quantos projetos ficaram atrasados por mês, por ano ou por quem.
-// import ProjAtrasados from './Graficos/ProjAtrasados';
+import ProjAtrasados from "./Graficos/ProjAtrasados";
 
 // Mostrar quantos projetos foram finalizados por mês, por ano ou por quem.
 
 function Home({ projetos }) {
-    return(
-        <div className="showProjetos">
-            <ProjCadastrados props={projetos} />
-            <ProjFinalizados props={projetos} />
-        </div>
-    );
+  return (
+    <div className="showProjetos">
+      <ProjCadastrados props={projetos} />
+      <ProjFinalizados props={projetos} />
+      <ProjAtrasados props={projetos} />
+    </div>
+  );
 }
 
 export default Home;

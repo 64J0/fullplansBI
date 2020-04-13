@@ -1,24 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
-html, body, #root {
-    height: 100%;
+html,
+body,
+#root {
+  height: 100%;
+  font-size: 16px;
 }
 
 body {
-    background-color: #ccc;
-    min-width: 1000px;
-    display: flex;
-    justify-content: center;
-    -webkit-font-smoothing: antialiased;
+  background-color: #ccc;
+  min-width: 1000px;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
 }
 
-body, input, button {
-    font-family: Roboto, sans-serif;
+body,
+input,
+button {
+  font-family: Roboto, sans-serif;
 }
