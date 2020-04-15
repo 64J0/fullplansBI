@@ -3,37 +3,6 @@ import Chartjs from "chart.js";
 
 import "./ProjCadastrados.css";
 
-// Dados de exemplo para testes, pois o banco de dados atual não
-// possui muitos valores.
-let dataExemplo = [
-  { createdAt: new Date(2019, 6, 19) }, //7
-  { createdAt: new Date(2017, 5, 19) }, //6
-  { createdAt: new Date(2018, 6, 19) }, //7
-  { createdAt: new Date(2018, 6, 19) }, //7
-  { createdAt: new Date(2020, 0, 19) }, //1
-  { createdAt: new Date(2020, 1, 2) }, //2
-  { createdAt: new Date(2020, 1, 3) }, //2
-  { createdAt: new Date(2020, 1, 3) }, //2
-  { createdAt: new Date(2020, 2, 2) }, //3
-  { createdAt: new Date(2020, 2, 5) }, //3
-  { createdAt: new Date(2020, 3, 14) }, //4
-  { createdAt: new Date(2020, 3, 22) }, //4
-  { createdAt: new Date(2020, 3, 17) }, //4
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 7, 13) }, //8
-  { createdAt: new Date(2020, 7, 13) }, //8
-  { createdAt: new Date(2020, 7, 13) }, //8
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 2, 6) }, //3
-  { createdAt: new Date(2020, 11, 6) }, //12
-]; //[1->1, 2->3, 3->11, 4->3, 6->1, 7->3, 8->3, 12->1]
-
 // MOSTRAR QUANTOS PROJETOS FORAM CADASTRADOS POR MÊS OU POR ANO.
 // props = projetos
 // funcao pra setar o intervalo (mes ou ano) -> ESTADO DE OPCAO.
@@ -42,24 +11,6 @@ function ProjCadastrados({ props }) {
   const [opcaoInputRadio1, setOpcaoInputRadio1] = useState("");
   const [dataEncontrada1, setDataEncontrada1] = useState({});
   const [opcaoSelect1, setOpcaoSelect1] = useState("Todos os anos");
-
-  /*  // Código para lidar com os dados do banco de dados quando o sistema estiver
-        // em atuação real.
-        // Quando for colocar em implementação, deve-re retirar a variável dataExemplo,
-        // e alterar para o valor de props.
-    function handleDateMongoDB(date) {
-        let d1 = new Date(String(date));
-        return {createdAt: d1};
-    }
-
-    if (props) {
-        dataExemplo = [];
-        props.map(prop => {
-            return dataExemplo.push(handleDateMongoDB(prop.createdAt))
-        });
-        console.log(dataExemplo)
-    }
-    */
 
   // defineDataEncontrada()
   //
@@ -84,15 +35,18 @@ function ProjCadastrados({ props }) {
         }
 
         if (opcaoSelect1 === "Todos os anos") {
-          dataExemplo.map((data) => {
-            indice = data.createdAt.getMonth();
+          props.map((data) => {
+            indice = new Date(data.createdAt).getMonth();
             objPlot.y[indice]++; // Incrementa o valor salvo na posição do mês
             return null;
           });
         } else {
-          dataExemplo.map((data) => {
-            if (Number(data.createdAt.getFullYear()) === Number(opcaoSelect1)) {
-              indice = data.createdAt.getMonth();
+          props.map((data) => {
+            if (
+              Number(new Date(data.createdAt).getFullYear()) ===
+              Number(opcaoSelect1)
+            ) {
+              indice = new Date(data.createdAt).getMonth();
               objPlot.y[indice]++;
             }
             return null;
@@ -104,8 +58,8 @@ function ProjCadastrados({ props }) {
           objPlot.x.push(anoAtual + aux);
           objPlot.y.push(0);
         }
-        dataExemplo.map((data) => {
-          indice = data.createdAt.getFullYear();
+        props.map((data) => {
+          indice = new Date(data.createdAt).getFullYear();
           switch (Math.abs(indice - anoAtual)) {
             case 0:
               objPlot.y[4]++;
@@ -136,7 +90,7 @@ function ProjCadastrados({ props }) {
     // de tempo for alterado (mês ou ano), e quando estando selecionado o mês, o usuário
     // mudar o ano que deseja visualizar os dados. Além disso, caso haja uma alteração
     // na propriedade passada para essa função, ela deve ser re-executada também.
-  }, [opcaoInputRadio1, opcaoSelect1, props]);
+  }, [props, opcaoInputRadio1, opcaoSelect1]);
 
   const [chartInstance1, setChartInstance1] = useState(null);
   // Define a configuração do gráfico que irá mostrar os dados e plota-o no canvas.
@@ -218,8 +172,8 @@ function ProjCadastrados({ props }) {
 
       tagSelect.innerHTML =
         '<option value="Todos os anos">Todos os anos</option>';
-      dataExemplo.map((data) => {
-        anoAtual = data.createdAt.getFullYear();
+      props.map((data) => {
+        anoAtual = new Date(data.createdAt).getFullYear();
         anoRepetido = false;
         for (let aux = 0; aux < anoEncontrado.length; aux++) {
           if (anoAtual === anoEncontrado[aux]) {
@@ -240,7 +194,7 @@ function ProjCadastrados({ props }) {
 
     setOpcaoDeAnos();
     // eslint-disable-next-line
-  }, [dataExemplo]);
+  }, [props]);
 
   // Essa função lida com a opção que foi escolhida na tag <select> pelo usuário.
   // Ela detecta essa escolha do usuário e salva na variável de estado opcaoSelect1.
@@ -253,6 +207,16 @@ function ProjCadastrados({ props }) {
   return (
     <div id="ProjCadastrados">
       <h3 className="ProjCadastrados">Projetos cadastrados</h3>
+
+      <div className="description">
+        <p>
+          Neste gráfico são mostrados dados referentes a projetos que foram
+          cadastrados no sistema Full Plans. Por meio da análise desses dados é
+          possível conhecer a quantidade de projetos que são cadastrados no
+          sistema filtrados por anos ou meses.
+        </p>
+      </div>
+
       <div className="grid-container">
         <div className="menu">
           <h4>Menu</h4>

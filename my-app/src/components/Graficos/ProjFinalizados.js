@@ -7,8 +7,7 @@ import defineDadosASeremMostrados from "./utils/defineDadosProjFinalizados";
 // Dados que serão usados para simular o funcionamento da aplicação com uma boa quantidade
 // de informações. O banco de dados atualmente não apresenta muitos dados, por isso optou-se
 // por essa alternativa.
-import exemploDados from "./exemploDados.json";
-let dadosExemplo = exemploDados;
+//import exemploDados from "./exemploDados.json";
 
 // MOSTRAR QUANTOS PROJETOS FORAM FINALIZADOS POR MÊS, POR ANO OU POR QUEM.
 // props = projetos
@@ -35,6 +34,8 @@ function ProjFinalizados({ props }) {
   const [dadosFiltrados, setDadosFiltrados] = useState([]);
   const [dadosParaMostrar, setDadosParaMostrar] = useState({});
 
+  let dadosExemplo = props;
+
   // Dados filtrados
   // Salva em uma variável de estado os projetos que foram finalizados (arquivados)
   useEffect(() => {
@@ -54,7 +55,7 @@ function ProjFinalizados({ props }) {
     filtrarDados();
     // Esse Hook deve ser executado sempre que props mudar, pois isso significa
     // que os dados do banco de dados foram alterados também.
-  }, [props]);
+  }, [dadosExemplo, props]);
 
   // As próximas operações devem ser efetuadas usando o conteúdo armazenado no estado
   // de dadosFiltrados.
@@ -70,6 +71,7 @@ function ProjFinalizados({ props }) {
       opcaoPessoaSelect,
       dadosFiltrados
     );
+    console.log(response);
     setDadosParaMostrar(response);
   }, [opcaoInputRadio, opcaoAnoSelect, opcaoPessoaSelect, dadosFiltrados]);
 
@@ -90,7 +92,7 @@ function ProjFinalizados({ props }) {
     }
 
     let chartConfig = {
-      type: "line",
+      type: "bar",
       data: {
         labels: dadosParaMostrar.x,
         datasets: [
@@ -266,6 +268,15 @@ function ProjFinalizados({ props }) {
   return (
     <div id="ProjFinalizados">
       <h3 className="ProjFinalizados">Projetos finalizados / arquivados</h3>
+
+      <div className="description">
+        <p>
+          Neste gráfico são mostrados dados referentes a projetos que foram
+          finalizados e portanto arquivados no sistema Full Plans. Analisando os
+          dados desse gráfico é possível ter uma estimativa de quantos projetos
+          são completados na empresa em determinado período de tempo.
+        </p>
+      </div>
 
       <div className="grid-container">
         <div className="menu">

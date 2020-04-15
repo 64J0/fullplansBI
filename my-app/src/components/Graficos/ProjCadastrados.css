@@ -17,6 +17,15 @@ div#ProjCadastrados h3.ProjCadastrados {
   color: #444;
 }
 
+div#ProjCadastrados div.description {
+  display: block;
+  width: 600px;
+  margin: 15px auto;
+  text-align: justify;
+  text-indent: 30px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 /*=============================== 
  GRID CONTAINER 
 ===============================*/

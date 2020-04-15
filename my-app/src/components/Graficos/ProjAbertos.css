@@ -1,7 +1,7 @@
 /*=============================== 
  DIV CONTAINER 
 ===============================*/
-div#ProjFinalizados {
+div#ProjAbertos {
   margin-top: 25px;
   background-color: #fff;
   border: 1px solid transparent;
@@ -11,14 +11,14 @@ div#ProjFinalizados {
   box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
-div#ProjFinalizados h3.ProjFinalizados {
+div#ProjAbertos h3.ProjAbertos {
   display: flex;
   margin: 20px 0;
   justify-content: center;
   color: #444;
 }
 
-div#ProjFinalizados div.description {
+div#ProjAbertos div.description {
   display: block;
   width: 600px;
   margin: 15px auto;
@@ -30,22 +30,23 @@ div#ProjFinalizados div.description {
 /*=============================== 
  GRID CONTAINER 
 ===============================*/
-div#ProjFinalizados div.grid-container {
+div#ProjAbertos div.grid-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto;
   justify-content: space-between;
 }
 
-div#ProjFinalizados div.grid-container div.menu {
+div#ProjAbertos div.grid-container div.menu {
   border: 1px solid #777;
   background-color: #fff;
   border-radius: 8px 0 0 0;
   height: 100%;
   margin: 0 5px 0 15px;
+  width: 220px;
 }
 
-div#ProjFinalizados div.grid-container div.menu h4 {
+div#ProjAbertos div.grid-container div.menu h4 {
   background-color: #333;
   border: 2px solid #333;
   border-radius: 8px 0 0 0;
@@ -53,11 +54,11 @@ div#ProjFinalizados div.grid-container div.menu h4 {
   padding: 5px;
 }
 
-div#ProjFinalizados div.grid-container div.menu input {
+div#ProjAbertos div.grid-container div.menu input {
   margin: 0 10px;
 }
 
-div#ProjFinalizados div.grid-container div.menu input {
+div#ProjAbertos div.grid-container div.menu input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -74,15 +75,15 @@ div#ProjFinalizados div.grid-container div.menu input {
   top: 4px;
 }
 
-div#ProjFinalizados div.grid-container div.menu input:checked {
+div#ProjAbertos div.grid-container div.menu input:checked {
   border: 6px solid #333;
 }
 
-div#ProjFinalizados div.grid-container div.menu div {
+div#ProjAbertos div.grid-container div.menu div {
   margin: 10px;
 }
 
-div#ProjFinalizados div.plot1 {
+div#ProjAbertos div.plot4 {
   border: 1px solid #777;
   border-radius: 0 10px 10px 0;
   min-width: 600px;

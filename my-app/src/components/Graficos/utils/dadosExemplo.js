@@ -131,7 +131,7 @@ const json = [
       },
     ],
   },
-  // 8 -> Projeto atrasado, mês 06
+  // 8 -> Projeto atrasado, mês 06, ano 2017
   {
     arquivado: true,
     createdAt: 1497841200000, // 1497841200000 = 19/06/2017
@@ -145,6 +145,24 @@ const json = [
       {
         dataInicio: 1497841200000, // 1497841200000 = 19/06/2017
         dataFinal: 1497841200000, // 1497841200000 = 19/06/2017
+        projetistaDesenho: "Joana Maria",
+      },
+    ],
+  },
+  // 9
+  {
+    arquivado: false,
+    createdAt: 1497841200000, // 1497841200000 = 19/06/2017
+    dataArquivado: 1549072800000, // 1549072800000 = 02/02/2019
+    infoProjetos: [
+      {
+        dataInicio: 1563505200000, //1563505200000 = 19/07/2019
+        dataFinal: 1583636400000, // 1583636400000 = 08/03/2020
+        projetistaDesenho: "Joaquim Ronaldo",
+      },
+      {
+        dataInicio: 1563505200000, //1563505200000 = 19/07/2019
+        dataFinal: 1549072800000, // 1549072800000 = 02/02/2019
         projetistaDesenho: "Joana Maria",
       },
     ],

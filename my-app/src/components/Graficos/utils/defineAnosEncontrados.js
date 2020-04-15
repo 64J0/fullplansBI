@@ -24,6 +24,5 @@ export default function defineAnosEncontrados(dadosEncontrados) {
     return null;
   });
 
-  console.log("Anos encontrados", anosEncontrados);
   return anosEncontrados.sort().reverse();
 }
