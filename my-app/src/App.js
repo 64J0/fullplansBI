@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import api from "./services/api";
-import Cabecalho from "./components/Cabecalho";
 import Rodape from "./components/Rodape";
 import Login from "./components/Login";
 import Home from "./components/Home";
@@ -97,7 +96,6 @@ function App() {
 
   return (
     <div className="App">
-      <Cabecalho />
       {decideWhatToDisplay()}
       <Rodape />
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "./Login.css";
+import undrawImageLogin from "../assets/undraw_visual_data.svg";
 
 function Login({ onSubmit }) {
   const [email, setEmail] = useState("");
@@ -41,6 +42,10 @@ function Login({ onSubmit }) {
     <div className="login">
       <form onSubmit={handleLogin} name="form-login">
         <fieldset>
+        <center>
+            <img src={undrawImageLogin} alt="Uma ilustração de um gráfico." style={{width: "350px"}} />
+        </center>
+
           <legend>Login</legend>
           <hr />
           <div className="form-group">
@@ -66,6 +71,7 @@ function Login({ onSubmit }) {
               name="password"
               value={senha}
               className="form-control"
+              placeholder="******"
               onChange={(e) => setSenha(e.target.value)}
             />
           </div>

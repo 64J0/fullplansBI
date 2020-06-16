@@ -23,7 +23,10 @@ div.login form fieldset hr {
 }
 
 div.login form fieldset div.form-group {
-  margin: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 div.login form fieldset div.form-group input {
@@ -33,6 +36,8 @@ div.login form fieldset div.form-group input {
 div.login form fieldset div.form-group label {
   font-size: 16px;
   font-weight: 550;
+  width: 100px;
+  height: 1em;
 }
 
 div.login form fieldset div.button-css {
@@ -46,6 +51,6 @@ div.login form fieldset div.button-css button {
   color: hsl(0, 2%, 89%);
   font-size: 22px;
   width: 60%;
-  margin: 15px;
+  margin: 15px 0 5px 0;
   padding: 8px;
 }
