@@ -1,6 +1,7 @@
 import React from "react";
 
-import "./Home.css";
+import "./GraphicsHome.css";
+import fullIcon from '../assets/fullE_icon.png';
 
 // Mostrar quantos projetos foram cadastrados por mês ou por ano.
 // Já funciona sem a necessidade de mudar nada no valor de props
@@ -22,6 +23,19 @@ import ProjAbertos from "./Graficos/ProjAbertos";
 function Home({ projetos }) {
   return (
     <div className="showProjetos">
+      <header>
+        <div className="logo-name">
+            <img 
+                src={fullIcon} 
+                alt="Ícone da Full Engenharia" 
+                style={{width: "50px"}}
+            />
+            <p><strong>GRUPO FULL</strong></p>
+        </div>
+            
+        <h1>FULL PLANS BI</h1>
+      </header>
+
       <ProjCadastrados props={projetos} />
       <ProjFinalizados props={projetos} />
       {/*<ProjAtrasados props={projetos} />*/}

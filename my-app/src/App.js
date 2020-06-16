@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import api from "./services/api";
 import Rodape from "./components/Rodape";
 import Login from "./components/Login";
-import Home from "./components/Home";
+import GraphicsHome from "./components/GraphicsHome";
 
 import verifyLocalStorage from "./components/Graficos/utils/verifyLocalStorage";
 
@@ -50,7 +50,7 @@ function App() {
 
     if (login.auth === true) {
       loadProjetos();
-      setStringPagina("Home");
+      setStringPagina("GraphicsHome");
     }
     // eslint-disable-next-line
   }, [login.auth]);
@@ -85,8 +85,8 @@ function App() {
   const [stringPagina, setStringPagina] = useState("");
   function decideWhatToDisplay() {
     switch (stringPagina) {
-      case "Home":
-        return <Home projetos={projetos} />;
+      case "GraphicsHome":
+        return <GraphicsHome projetos={projetos} />;
       default:
         return (
           <Login setStringPagina={setStringPagina} onSubmit={submitLogin} />
