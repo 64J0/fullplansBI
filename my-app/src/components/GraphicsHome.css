@@ -2,6 +2,7 @@ div.showProjetos {
     margin: 0 auto;
     padding: 25px 25px 50px 25px;
     width: 100%;
+    min-height: 90vh;
     background-color: #fff;
 
     border-radius: 0 0 15px 15px;
@@ -23,4 +24,21 @@ div.showProjetos header div.logo-name {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    color: rgb(15, 103, 154);
+}
+
+div.showProjetos header h1 {
+    color: rgb(15, 103, 154);
+}
+
+div.showProjetos form {
+    margin: 10px 0;
+    padding: 20px 0;
+    border-top: 1px dashed #666;
+    border-bottom: 1px dashed #666;
+}
+
+div.showProjetos form label {
+    margin-right: 15px;
 }

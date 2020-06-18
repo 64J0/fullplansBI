@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 import "./GraphicsHome.css";
 import fullIcon from '../assets/fullE_icon.png';
@@ -21,6 +21,23 @@ import ProjAbertos from "./Graficos/ProjAbertos";
 // Mostrar quantos projetos foram finalizados por mês, por ano ou por quem.
 
 function Home({ projetos }) {
+  const [opcao, setOpcao] = useState("");
+
+  const showGraphics = useCallback(() => {
+      switch(opcao) {
+          case "Selecione":
+              return null;
+          case "Cadastrados":
+              return <ProjCadastrados props={projetos} />;
+          case "Finalizados":
+              return <ProjFinalizados props={projetos} />;
+          case "Abertos":
+              return <ProjAbertos props={projetos} />;
+          default:
+              return null;
+      }
+  }, [opcao, projetos]);
+
   return (
     <div className="showProjetos">
       <header>
@@ -36,10 +53,27 @@ function Home({ projetos }) {
         <h1>FULL PLANS BI</h1>
       </header>
 
-      <ProjCadastrados props={projetos} />
-      <ProjFinalizados props={projetos} />
-      {/*<ProjAtrasados props={projetos} />*/}
-      <ProjAbertos props={projetos} />
+      <form action="">
+          <fieldset>
+              <legend>Parâmetros da Consulta</legend>
+              <label htmlFor="tipo">Tipo:</label>
+              <select 
+                name="tipo"
+                onChange={(event) => setOpcao(event.target.value)}
+              >
+                  <option value="Selecione">Selecione um valor</option>
+                  <option value="Cadastrados">Projetos Cadastrados</option>
+                  <option value="Finalizados">Projetos Finalizados</option>
+                  <option value="Abertos">Projetos Não finalizados</option>
+              </select>
+          </fieldset>
+      </form>
+
+      <div id="divGraphics" style={{width: "850px"}}>
+        {
+            showGraphics()
+        }
+      </div>
     </div>
   );
 }
