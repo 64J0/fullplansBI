@@ -3,7 +3,6 @@ import Chartjs from "chart.js";
 import { FiAlertCircle } from 'react-icons/fi';
 
 import "./ProjCadastrados.css";
-//import "./utils/tooltip.css";
 
 // MOSTRAR QUANTOS PROJETOS FORAM CADASTRADOS POR MÊS OU POR ANO.
 // props = projetos
@@ -116,7 +115,7 @@ function ProjCadastrados({ props }) {
         datasets: [
           {
             label: "Quantidade de projetos cadastrados",
-            backgroundColor: "rgb(24, 57, 190)",
+            backgroundColor: "rgb(15, 103, 154)",
             data: dataEncontrada1.y,
           },
         ],
@@ -216,12 +215,12 @@ function ProjCadastrados({ props }) {
             style={{cursor: "pointer", marginLeft: "10px"}}
             onMouseOver={() => {
                 // Função que cria o tooltip do lado da tela
-                console.log("Tooltip")
-            }} 
+                console.log("Hover");
+            }}
         />
 
-        <div className="tooltip">  
-            <span className="tooltitext">
+        <div style={{display: "none"}} className="">  
+            <span className="">
             Neste gráfico são mostrados dados referentes a projetos que foram
             cadastrados no sistema Full Plans. Por meio da análise desses dados é
             possível conhecer a quantidade de projetos que são cadastrados no

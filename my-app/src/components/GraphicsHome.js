@@ -61,10 +61,17 @@ function Home({ projetos }) {
                 name="tipo"
                 onChange={(event) => setOpcao(event.target.value)}
               >
-                  <option value="Selecione">Selecione um valor</option>
+                  <option value="Selecione">-- Selecione um valor --</option>
                   <option value="Cadastrados">Projetos Cadastrados</option>
                   <option value="Finalizados">Projetos Finalizados</option>
                   <option value="Abertos">Projetos Não finalizados</option>
+                  <option value="Andamento">Em Andamento</option>
+                  <option value="Paralisado">Paralisado Pelo Cliente</option>
+                  <option value="Aguardando Início">Aguardando Início Pela Full</option>
+                  <option value="Aguardando Levantamento">Aguardando Levantamento De Campo</option>
+                  <option value="Números">Aguardando Números</option>
+                  <option value="Medição">Aguardando Medição</option>
+                  <option value="Medição">Aguardando Aprovação Do Projeto</option>
               </select>
           </fieldset>
       </form>

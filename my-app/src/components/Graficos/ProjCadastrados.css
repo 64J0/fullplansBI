@@ -1,15 +1,10 @@
+#ProjCadastrados {
+    --main-height: 320px;
+}
+
 /*=============================== 
  DIV CONTAINER 
 ===============================*/
-div#ProjCadastrados {
-  background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: 15px;
-  padding-bottom: 20px;
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
-}
-
 div#ProjCadastrados header {
   display: flex;
   align-items: center;
@@ -42,11 +37,13 @@ div#ProjCadastrados div.flex-container {
  MENU
 ===============================*/
 div#ProjCadastrados div.flex-container div.menu {
+  width: 200px;
+  height: var(--main-height);
+
   border: 1px solid #777;
   background-color: #fff;
   border-radius: 8px 0 0 0;
-  width: 200px;
-  margin: 0 5px 0 15px;
+  margin-right: 7px;
 }
 
 div#ProjCadastrados div.flex-container div.menu h4 {
@@ -55,10 +52,6 @@ div#ProjCadastrados div.flex-container div.menu h4 {
   border-radius: 8px 0 0 0;
   color: #ddd;
   padding: 5px;
-}
-
-div#ProjCadastrados div.flex-container div.menu input {
-  margin: 0 10px;
 }
 
 div#ProjCadastrados div.flex-container div.menu input {
@@ -73,6 +66,7 @@ div#ProjCadastrados div.flex-container div.menu input {
   border: 2px solid #999;
   transition: 0.2s all linear;
 
+  margin: 0 10px;
   margin-right: 5px;
 }
 
@@ -88,8 +82,24 @@ div#ProjCadastrados div.flex-container div.menu label {
  GRÁFICO 
 ===============================*/
 div#ProjCadastrados div.plot1 {
+  width: 600px;
+  height: var(--main-height);
+
   border: 1px solid #777;
   border-radius: 0 10px 10px 0;
   margin-right: 10px;
-  width: 400px;
+}
+
+/*=============================== 
+ TOOLTIP
+===============================*/
+div#ProjCadastrados .tooltip {
+    display: none;
+    background: #C8C8C8;
+    margin-left: 28px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    width:200px;
+    height:100px;
 }
