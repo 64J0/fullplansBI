@@ -3,7 +3,7 @@ import Chartjs from "chart.js";
 import exemploDadosJS from "./utils/dadosExemplo";
 
 import "./ProjAtrasados.css";
-import defineAnosEncontrados from "./utils/defineAnosEncontrados";
+import defineAnosEncontrados from "../../utils/defineAnosEncontrados";
 
 function ProjAtrasados({ props }) {
   const [opcaoInputRadio, setOpcaoInputRadio] = useState(null);

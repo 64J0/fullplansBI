@@ -1,7 +1,7 @@
 footer {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding-top: 20px;
   font-weight: 550;
   text-transform: uppercase;
 }

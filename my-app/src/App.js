@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import api from "./services/api";
-import Rodape from "./components/Rodape";
-import Login from "./components/Login";
-import GraphicsHome from "./components/GraphicsHome";
 
-import verifyLocalStorage from "./components/Graficos/utils/verifyLocalStorage";
+import Login from "./pages/Login";
+import Layout from "./pages/Layout";
+
+import verifyLocalStorage from "./utils/verifyLocalStorage";
 
 function App() {
   const [projetos, setProjetos] = useState([]);
@@ -86,7 +86,7 @@ function App() {
   function decideWhatToDisplay() {
     switch (stringPagina) {
       case "GraphicsHome":
-        return <GraphicsHome projetos={projetos} />;
+        return <Layout projetos={projetos} />;
       default:
         return (
           <Login setStringPagina={setStringPagina} onSubmit={submitLogin} />
@@ -94,12 +94,7 @@ function App() {
     }
   }
 
-  return (
-    <div className="App">
-      {decideWhatToDisplay()}
-      <Rodape />
-    </div>
-  );
+  return <div className="App">{decideWhatToDisplay()}</div>;
 }
 
 export default App;

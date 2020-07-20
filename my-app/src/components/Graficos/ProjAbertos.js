@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Chartjs from "chart.js";
 
 import "./ProjAbertos.css";
-//import dadosExemplo from "./utils/dadosExemplo";
 
 // Neste componente serão mostrados os projetos que ainda estão abertos
 // ou seja, ainda não foram finalizados -> arquivados.

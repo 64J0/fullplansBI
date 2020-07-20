@@ -1,0 +1,25 @@
+div.showProjetos {
+  margin: 0 auto;
+}
+
+div.showProjetos #background {
+  padding: 25px 25px 50px 25px;
+  width: 100%;
+  min-height: 90vh;
+  background-color: #fff;
+
+  border-radius: 0 0 15px 15px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+}
+
+div.showProjetos form {
+  margin: 10px 0;
+  padding: 20px 0;
+  border-top: 1px dashed #666;
+  border-bottom: 1px dashed #666;
+}
+
+div.showProjetos form label {
+  margin-right: 15px;
+}

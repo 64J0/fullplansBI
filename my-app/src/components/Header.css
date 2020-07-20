@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 80px;
+}
+
+header div.logo-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(15, 103, 154);
+}
+
+header h1 {
+  color: rgb(15, 103, 154);
+}

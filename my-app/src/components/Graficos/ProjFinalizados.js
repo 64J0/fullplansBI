@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Chartjs from "chart.js";
 
 import "./ProjFinalizados.css";
-import defineDadosASeremMostrados from "./utils/defineDadosProjFinalizados";
+import defineDadosASeremMostrados from "../../utils/defineDadosProjFinalizados";
 
 // Dados que serão usados para simular o funcionamento da aplicação com uma boa quantidade
 // de informações. O banco de dados atualmente não apresenta muitos dados, por isso optou-se
